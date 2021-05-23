@@ -45,6 +45,8 @@ print(data.tail())
 
 tavg_nodata_count = None
 #YOUR CODE HERE 2
+# Calculate how many no-data values there are in the TANG column
+tavg_nodata_count = data['TAVG'].isnull().sum()
 
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
@@ -57,6 +59,8 @@ print('Number of no-data values in column "TAVG":',tavg_nodata_count)
 
 tmin_nodata_count = None
 #YOUR CODE HERE 3
+# Calculate how many no-data values there are in the TMIN column
+tmin_nodata_count = data['TMIN'].isnull().sum()
 
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
@@ -69,6 +73,8 @@ print('Number of no-data values in column "TMIN":', tmin_nodata_count)
 
 day_count = None 
 #YOUR CODE HERE 4
+# Calculate the total number of days
+day_count = len(data['DATE'])
 
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
@@ -82,6 +88,8 @@ print("Number of days:", day_count)
 first_obs = None
  
 # YOUR CODE HERE 5
+#Find the date of the oldest observation 
+first_obs = min(data['DATE'])
 
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
@@ -94,6 +102,8 @@ print('Date of the first observation:',first_obs)
 last_obs = None
 
 # YOUR CODE HERE 6
+#Find the data of most recent observation
+last_obs = max(data['DATE'])
 
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
