@@ -117,6 +117,8 @@ print('Date of the last observation:', last_obs)
 avg_temp = None
 
 # YOUR CODE HERE 7
+#Find the average temperature for the whole data file from column TAVG
+avg_temp = data['TAVG'].mean()
 
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
