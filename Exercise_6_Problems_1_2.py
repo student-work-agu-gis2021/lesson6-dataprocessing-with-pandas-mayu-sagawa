@@ -122,6 +122,7 @@ print('Average temperature (F) for the whole dataset:', round(avg_temp, 2))
 avg_temp_1969 = None
 
 # YOUR CODE HERE 8
+#Specify a range and caluclate the average
 data2 = data.query('19690501<=DATE<=19690831')
 avg_temp_1969 = data2['TMAX'].mean()
 
