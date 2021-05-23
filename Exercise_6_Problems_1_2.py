@@ -17,6 +17,24 @@ import numpy as np
 data = None
 
 # YOUR CODE HERE 1
+# Define relative path to the file
+fp = r'data/1091402.txt'
+# Read data using varying amount of spaces as separator and  specifying -9999 as NoData values, skipping the second line.
+data = pd.read_csv(fp,delim_whitespace = True,skiprows = 2 ,na_values = ['-9999'])
+# Read the data as a numpy array
+a=np.array(data)
+# Insert on line 0
+data= np.insert(a,0,['STATION','ELEVATION', 'LATITUDE', 'LONGTUDE', 'DATE','PRCP', 'TAVG', 'TMAX','TMIN'],axis =0)
+# Return the data to pandas
+data=pd.DataFrame(data)
+# Specify line 0 for columns
+data= data.rename(columns=data.iloc[0])
+#Remove line 0
+data=data.drop(data.index[0])
+#Check that the dataframe 
+print(data.head())
+#Check the last rows of the data
+print(data.tail())
 
 # ### Part 2 
 # 
@@ -27,7 +45,6 @@ data = None
 
 tavg_nodata_count = None
 #YOUR CODE HERE 2
-
 
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
